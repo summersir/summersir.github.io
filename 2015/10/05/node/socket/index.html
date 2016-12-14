@@ -152,6 +152,8 @@
 
 	<script src="/js/jquery.min.js"></script>
 	
+	<link rel="stylesheet" href="/css/highlight/arta.css">
+	
 	<!-- UC Browser Compatible-->
 	<script>
 		var agent = navigator.userAgent.toLowerCase();
@@ -187,7 +189,9 @@
                 </button>
 				
 				
-                
+                <!-- Post TOC -->
+
+    
 	<!-- Back Button -->
 <!--
 	<div class="material-back" id="backhome-div" tabindex="0">
@@ -212,6 +216,7 @@
 		
 <!--			<li class="mdl-menu__item">Some Action</li>-->
 	</ul>
+
 
 
 <!-- Layouts -->
@@ -316,7 +321,7 @@
 				
 
                 <!-- Post Content -->
-                <div id="post-content" class="markdown-Material mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
 	
 		<h2 id="&#x6E90;&#x7801;-amp-&#x6F14;&#x793A;"><a href="#&#x6E90;&#x7801;-amp-&#x6F14;&#x793A;" class="headerlink" title="&#x6E90;&#x7801;&amp;&#x6F14;&#x793A;"></a>&#x6E90;&#x7801;&amp;&#x6F14;&#x793A;</h2><p>&#x6E90;&#x7801;&#x53EF;&#x8BBF;&#x95EE;&#x9879;&#x76EE;&#x7684;<a href="https://github.com/summersir/private.github.io/tree/master/socket-io" target="_blank" rel="external">GITHub</a>&#x9875;&#x9762;&#x4E0B;&#x8F7D;</p>
 <p>&#x672C;&#x5730;&#x8FD0;&#x884C;&#x65B9;&#x6CD5;</p>
@@ -404,7 +409,7 @@
     <!-- 多说评论框 start -->
         <div class="ds-thread" 
             data-thread-key="2015/10/05/node/socket/" 
-            data-url="http://summersir.github.io//2015/10/05/node/socket/index.html"
+            data-url="http://summersir.github.io/2015/10/05/node/socket/"
             data-title="基于Node.js和socket打造简易聊天室"></div>
     <!-- 多说评论框 end -->
 </div>
@@ -684,6 +689,7 @@ It will not impact the appearance and can give developers a lot of support :)
 </footer>
                 
 				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
 <script src="/js/nprogress.js"></script>
 
@@ -830,24 +836,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 	<script>
-		var search_path = "search.xml";
-		if (search_path.length == 0) {
-		search_path = "search.xml";
-		}
-		var path = "/" + search_path;
-		searchFunc(path, 'search', 'local-search-result');
-        
-        
+        var inputArea = document.querySelector("#search");
+        var getSearchFile = function(){
+            var path = "search.xml";
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        inputArea.onfocus = function(){ getSearchFile() }
 	</script>
 
 
 <!-- Window Load-->
 <script>
-    // Post_Toc parent position fixed
     $(window).load(function() {
+        // Post_Toc parent position fixed
         $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
     });
 </script>
+
+<!-- MathJax Load-->
+
             </main>
         </div>
 		

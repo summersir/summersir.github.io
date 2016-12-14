@@ -152,6 +152,8 @@
 
 	<script src="/js/jquery.min.js"></script>
 	
+	<link rel="stylesheet" href="/css/highlight/arta.css">
+	
 	<!-- UC Browser Compatible-->
 	<script>
 		var agent = navigator.userAgent.toLowerCase();
@@ -294,11 +296,8 @@
                 </li>
             </a>
             
-            <a class="index_share-link" href="null">
-                <li class="mdl-menu__item mdl-js-ripple-effect">
-                    文章 RSS
-                </li>
-            </a>
+            
+            
             <a class="index_share-link" href="https://twitter.com/intent/tweet?text=夏午茶丶先生的生活&url=http://summersir.github.io/&via=夏午茶丶先生" target="_blank">
                 <li class="mdl-menu__item mdl-js-ripple-effect">
                     分享到 Twitter
@@ -338,7 +337,7 @@
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-          &#x6E90;&#x7801;&amp;&#x6F14;&#x793A;&#x6E90;&#x7801;&#x53EF;&#x8BBF;&#x95EE;&#x9879;&#x76EE;&#x7684;GITHub&#x9875;&#x9762;&#x4E0B;&#x8F7D;
+            &#x6E90;&#x7801;&amp;&#x6F14;&#x793A;&#x6E90;&#x7801;&#x53EF;&#x8BBF;&#x95EE;&#x9879;&#x76EE;&#x7684;GITHub&#x9875;&#x9762;&#x4E0B;&#x8F7D;
 &#x672C;&#x5730;&#x8FD0;&#x884C;&#x65B9;&#x6CD5;
 
 &#x547D;&#x4EE4;&#x884C;&#x8FD0;&#x884C;npm install
@@ -374,7 +373,7 @@
                 <!-- Comment Number -->
                 &nbsp;|&nbsp;
                 <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="undefined" data-count-type="comments"></span>
+                        <span class="ds-thread-count" data-thread-key="2015/10/05/node/socket/" data-count-type="comments"></span>
                 </span>
             
             
@@ -587,13 +586,6 @@ It will not impact the appearance and can give developers a lot of support :)
 				
 				
 				
-					<!-- Footer Top Button -->
-					<div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-				
 				
 				<!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -661,6 +653,7 @@ It will not impact the appearance and can give developers a lot of support :)
 </footer>
                 
 				<!-- Import File -->
+<script src="/js/highlight.min.js"></script>
 <script src="/js/js.min.js"></script>
 <script src="/js/nprogress.js"></script>
 
@@ -807,24 +800,26 @@ It will not impact the appearance and can give developers a lot of support :)
 </script>
 
 	<script>
-		var search_path = "search.xml";
-		if (search_path.length == 0) {
-		search_path = "search.xml";
-		}
-		var path = "/" + search_path;
-		searchFunc(path, 'search', 'local-search-result');
-        
-        
+        var inputArea = document.querySelector("#search");
+        var getSearchFile = function(){
+            var path = "search.xml";
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        inputArea.onfocus = function(){ getSearchFile() }
 	</script>
 
 
 <!-- Window Load-->
 <script>
-    // Post_Toc parent position fixed
     $(window).load(function() {
+        // Post_Toc parent position fixed
         $(".post-toc-wrap").parent(".mdl-menu__container").css("position", "fixed");
     });
 </script>
+
+<!-- MathJax Load-->
+
             </main>
         </div>
 		
